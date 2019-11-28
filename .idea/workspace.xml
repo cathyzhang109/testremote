@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63125d4e-1d1d-404c-bcf9-9f8c282ab350" name="Default Changelist" comment="" />
+    <list default="true" id="63125d4e-1d1d-404c-bcf9-9f8c282ab350" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gittest/hello.py" beforeDir="false" afterPath="$PROJECT_DIR$/gittest/hello.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +19,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1UEB0tJlg7sOLDLHwlRwXOMCgv2" />
@@ -47,6 +55,25 @@
       <option name="presentableId" value="Default" />
       <updated>1574911654671</updated>
     </task>
+    <task id="LOCAL-00001" summary="cathy">
+      <created>1574912073175</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574912073175</updated>
+    </task>
+    <task id="LOCAL-00002" summary="cathy">
+      <created>1574912245210</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574912245210</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="cathy" />
+    <option name="LAST_COMMIT_MESSAGE" value="cathy" />
   </component>
 </project>
