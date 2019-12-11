@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.4 on win32)" generated="20191211 22:42:41.239" rpa="false">
+<suite id="s1" name="Tc" source="D:\untitled2\yjyx\task1\tc">
+<suite id="s1-s1" name="D-空白数据" source="D:\untitled2\yjyx\task1\tc\d-空白数据">
+<kw name="Delete Allclass" library="pylib.schoolclasslib.Schoolclasslib" type="setup">
+<msg timestamp="20191211 22:42:42.544" level="INFO">{ 'gradeid': None,
+  'retcode': 0,
+  'retlist': [ { 'grade__name': '七年级',
+                 'id': 277324,
+                 'invitecode': '2773242180977',
+                 'name': '1班',
+                 'studentlimit': 80,
+                 'studentnumber': 0,
+                 'teacherlist': []},
+               { 'grade__name': '七年级',
+                 'id': 277325,
+                 'invitecode': '2773252386541',
+                 'name': '2班',
+                 'studentlimit': 80,
+                 'studentnumber': 0,
+                 'teacherlist': []}]}
+这是one {'name': '1班', 'grade__name': '七年级', 'invitecode': '2773242180977', 'studentlimit': 80, 'studentnumber': 0, 'id': 277324, 'teacherlist': []}
+{'retcode': 0}
+这是one {'name': '2班', 'grade__name': '七年级', 'invitecode': '2773252386541', 'studentlimit': 80, 'studentnumber': 0, 'id': 277325, 'teacherlist': []}
+{'retcode': 0}
+{'gradeid': None, 'retcode': 0, 'retlist': []}
+888777777 {'gradeid': None, 'retlist': [], 'retcode': 0}</msg>
+<status status="PASS" starttime="20191211 22:42:42.010" endtime="20191211 22:42:42.545"></status>
+</kw>
+<suite id="s1-s1-s1" name="班级管理" source="D:\untitled2\yjyx\task1\tc\d-空白数据\班级管理">
+<suite id="s1-s1-s1-s1" name="Newclass" source="D:\untitled2\yjyx\task1\tc\d-空白数据\班级管理\newclass.robot">
+<test id="s1-s1-s1-s1-t1" name="添加班级 1--tc000001">
+<kw name="Add Class" library="pylib.schoolclasslib.Schoolclasslib">
+<arguments>
+<arg>1</arg>
+<arg>1班</arg>
+<arg>80</arg>
+</arguments>
+<assign>
+<var>${var}</var>
+</assign>
+<msg timestamp="20191211 22:42:42.664" level="INFO">{'id': 277332, 'invitecode': '2773321839843', 'retcode': 0}</msg>
+<msg timestamp="20191211 22:42:42.664" level="INFO">${var} = {'invitecode': '2773321839843', 'retcode': 0, 'id': 277332}</msg>
+<status status="PASS" starttime="20191211 22:42:42.588" endtime="20191211 22:42:42.665"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${var}[retcode]==0</arg>
+</arguments>
+<status status="PASS" starttime="20191211 22:42:42.666" endtime="20191211 22:42:42.667"></status>
+</kw>
+<kw name="List Class" library="pylib.schoolclasslib.Schoolclasslib">
+<arguments>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${listclass}</var>
+</assign>
+<msg timestamp="20191211 22:42:42.854" level="INFO">{ 'gradeid': 1,
+  'retcode': 0,
+  'retlist': [ { 'grade__name': '七年级',
+                 'id': 277332,
+                 'invitecode': '2773321839843',
+                 'name': '1班',
+                 'studentlimit': 80,
+                 'studentnumber': 0,
+                 'teacherlist': []}]}</msg>
+<msg timestamp="20191211 22:42:42.855" level="INFO">${listclass} = {'gradeid': 1, 'retlist': [{'name': '1班', 'grade__name': '七年级', 'invitecode': '2773321839843', 'studentlimit': 80, 'studentnumber': 0, 'id': 277332, 'teacherlist': []}], 'retcode': 0}</msg>
+<status status="PASS" starttime="20191211 22:42:42.668" endtime="20191211 22:42:42.856"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>$listclass['retlist'][0]</arg>
+</arguments>
+<assign>
+<var>${fu}</var>
+</assign>
+<msg timestamp="20191211 22:42:42.884" level="INFO">${fu} = {'name': '1班', 'grade__name': '七年级', 'invitecode': '2773321839843', 'studentlimit': 80, 'studentnumber': 0, 'id': 277332, 'teacherlist': []}</msg>
+<status status="PASS" starttime="20191211 22:42:42.859" endtime="20191211 22:42:42.885"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${fu}[invitecode]</arg>
+<arg>${var}[invitecode]</arg>
+</arguments>
+<status status="PASS" starttime="20191211 22:42:42.887" endtime="20191211 22:42:42.889"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${fu}[id]</arg>
+<arg>${var}[id]</arg>
+</arguments>
+<status status="PASS" starttime="20191211 22:42:42.891" endtime="20191211 22:42:42.893"></status>
+</kw>
+<status status="PASS" starttime="20191211 22:42:42.585" endtime="20191211 22:42:42.894" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-s1-t2" name="添加班级 2--tc000002">
+<kw name="Add Class" library="pylib.schoolclasslib.Schoolclasslib">
+<arguments>
+<arg>1</arg>
+<arg>2班</arg>
+<arg>80</arg>
+</arguments>
+<assign>
+<var>${var}</var>
+</assign>
+<msg timestamp="20191211 22:42:43.001" level="INFO">{'id': 277333, 'invitecode': '2773334587388', 'retcode': 0}</msg>
+<msg timestamp="20191211 22:42:43.002" level="INFO">${var} = {'invitecode': '2773334587388', 'retcode': 0, 'id': 277333}</msg>
+<status status="PASS" starttime="20191211 22:42:42.912" endtime="20191211 22:42:43.002"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${var}[retcode]==0</arg>
+</arguments>
+<status status="PASS" starttime="20191211 22:42:43.004" endtime="20191211 22:42:43.006"></status>
+</kw>
+<kw name="List Class" library="pylib.schoolclasslib.Schoolclasslib">
+<assign>
+<var>${listclass}</var>
+</assign>
+<msg timestamp="20191211 22:42:43.162" level="INFO">{ 'gradeid': None,
+  'retcode': 0,
+  'retlist': [ { 'grade__name': '七年级',
+                 'id': 277332,
+                 'invitecode': '2773321839843',
+                 'name': '1班',
+                 'studentlimit': 80,
+                 'studentnumber': 0,
+                 'teacherlist': []},
+               { 'grade__name': '七年级',
+                 'id': 277333,
+                 'invitecode': '2773334587388',
+                 'name': '2班',
+                 'studentlimit': 80,
+                 'studentnumber': 0,
+                 'teacherlist': []}]}</msg>
+<msg timestamp="20191211 22:42:43.162" level="INFO">${listclass} = {'gradeid': None, 'retlist': [{'name': '1班', 'grade__name': '七年级', 'invitecode': '2773321839843', 'studentlimit': 80, 'studentnumber': 0, 'id': 277332, 'teacherlist': []}, {'name': '2班', 'grade__name'...</msg>
+<status status="PASS" starttime="20191211 22:42:43.007" endtime="20191211 22:42:43.162"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>$listclass['retlist']</arg>
+</arguments>
+<assign>
+<var>${fu}</var>
+</assign>
+<msg timestamp="20191211 22:42:43.166" level="INFO">${fu} = [{'name': '1班', 'grade__name': '七年级', 'invitecode': '2773321839843', 'studentlimit': 80, 'studentnumber': 0, 'id': 277332, 'teacherlist': []}, {'name': '2班', 'grade__name': '七年级', 'invitecode': '27733...</msg>
+<status status="PASS" starttime="20191211 22:42:43.164" endtime="20191211 22:42:43.166"></status>
+</kw>
+<kw name="Classlist Should Contain" library="pylib.schoolclasslib.Schoolclasslib">
+<arguments>
+<arg>七年级</arg>
+<arg>${var}[id]</arg>
+<arg>${var}[invitecode]</arg>
+<arg>2班</arg>
+<arg>80</arg>
+</arguments>
+<assign>
+<var>${listvar}</var>
+</assign>
+<msg timestamp="20191211 22:42:43.365" level="INFO">这是item {'grade__name': '七年级', 'id': 277333, 'invitecode': '2773334587388', 'name': '2班', 'studentlimit': '80', 'studentnumber': 0, 'teacherlist': []}
+{ 'gradeid': None,
+  'retcode': 0,
+  'retlist': [ { 'grade__name': '七年级',
+                 'id': 277332,
+                 'invitecode': '2773321839843',
+                 'name': '1班',
+                 'studentlimit': 80,
+                 'studentnumber': 0,
+                 'teacherlist': []},
+               { 'grade__name': '七年级',
+                 'id': 277333,
+                 'invitecode': '2773334587388',
+                 'name': '2班',
+                 'studentlimit': 80,
+                 'studentnumber': 0,
+                 'teacherlist': []}]}
+False</msg>
+<msg timestamp="20191211 22:42:43.366" level="INFO">${listvar} = None</msg>
+<status status="PASS" starttime="20191211 22:42:43.167" endtime="20191211 22:42:43.366"></status>
+</kw>
+<status status="PASS" starttime="20191211 22:42:42.901" endtime="20191211 22:42:43.368" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-s1-t3" name="添加班级 3--tc000003">
+<kw name="List Class" library="pylib.schoolclasslib.Schoolclasslib">
+<assign>
+<var>${listclass}</var>
+</assign>
+<msg timestamp="20191211 22:42:43.469" level="INFO">{ 'gradeid': None,
+  'retcode': 0,
+  'retlist': [ { 'grade__name': '七年级',
+                 'id': 277332,
+                 'invitecode': '2773321839843',
+                 'name': '1班',
+                 'studentlimit': 80,
+                 'studentnumber': 0,
+                 'teacherlist': []},
+               { 'grade__name': '七年级',
+                 'id': 277333,
+                 'invitecode': '2773334587388',
+                 'name': '2班',
+                 'studentlimit': 80,
+                 'studentnumber': 0,
+                 'teacherlist': []}]}</msg>
+<msg timestamp="20191211 22:42:43.470" level="INFO">${listclass} = {'gradeid': None, 'retlist': [{'name': '1班', 'grade__name': '七年级', 'invitecode': '2773321839843', 'studentlimit': 80, 'studentnumber': 0, 'id': 277332, 'teacherlist': []}, {'name': '2班', 'grade__name'...</msg>
+<status status="PASS" starttime="20191211 22:42:43.382" endtime="20191211 22:42:43.470"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>$listclass['retlist']</arg>
+</arguments>
+<assign>
+<var>${fu}</var>
+</assign>
+<msg timestamp="20191211 22:42:43.477" level="INFO">${fu} = [{'name': '1班', 'grade__name': '七年级', 'invitecode': '2773321839843', 'studentlimit': 80, 'studentnumber': 0, 'id': 277332, 'teacherlist': []}, {'name': '2班', 'grade__name': '七年级', 'invitecode': '27733...</msg>
+<status status="PASS" starttime="20191211 22:42:43.474" endtime="20191211 22:42:43.477"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${fu}</arg>
+</arguments>
+<assign>
+<var>${lenfu}</var>
+</assign>
+<msg timestamp="20191211 22:42:43.480" level="INFO">Length is 2</msg>
+<msg timestamp="20191211 22:42:43.481" level="INFO">${lenfu} = 2</msg>
+<status status="PASS" starttime="20191211 22:42:43.479" endtime="20191211 22:42:43.481"></status>
+</kw>
+<kw name="Add Class" library="pylib.schoolclasslib.Schoolclasslib">
+<arguments>
+<arg>1</arg>
+<arg>2班</arg>
+<arg>80</arg>
+</arguments>
+<assign>
+<var>${var}</var>
+</assign>
+<msg timestamp="20191211 22:42:43.573" level="INFO">{ 'reason': 'Traceback (most recent call last):\n'
+            '  File '
+            '"/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", '
+            'line 542, in addClass\n'
+            '    school_class = '
+            'self._addClass(name,schoolid,gradeid,studentlimit)\n'
+            '  File '
+            '"/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", '
+            'line 531, in _addClass\n'
+            '    school_class.save()\n'
+            '  File '
+            '"/usr/local/lib/python2.7/site-packages/django/db/models/base.py", '
+            'line 710, in save\n'
+            '    force_update=force_update, update_fields=update_fields)\n'
+            '  File '
+            '"/usr/local/lib/python2.7/site-packages/django/db/models/base.py", '
+            'line 738, in save_base\n'
+            '    updated = self._save_table(raw, cls, force_insert, '
+            'force_update, using, update_fields)\n'
+            '  File '
+            '"/usr/local/lib/python2.7/site-packages/django/db/models/base.py", '
+            'line 822, in _save_table\n'
+            '    result = self._do_insert(cls._base_manager, using, fields, '
+            'update_pk, raw)\n'
+            '  File '
+            '"/usr/local/lib/python2.7/site-packages/django/db/models/base.py", '
+            'line 861, in _do_insert\n'
+            '    using=using, raw=raw)\n'
+            '  File '
+            '"/usr/local/lib/python2.7/site-packages/django/db/models/manager.py", '
+            'line 127, in manager_method\n'
+            '    return getattr(self.get_queryset(), name)(*args, **kwargs)\n'
+            '  File '
+            '"/usr/local/lib/python2.7/site-packages/django/db/models/query.py", '
+            'line 920, in _insert\n'
+            '    return '
+            'query.get_compiler(using=using).execute_sql(return_id)\n'
+            '  File '
+            '"/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", '
+            'line 974, in execute_sql\n'
+            '    cursor.execute(sql, params)\n'
+            '  File '
+            '"/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", '
+            'line 64, in execute\n'
+            '    return self.cursor.execute(sql, params)\n'
+            '  File '
+            '"/usr/local/lib/python2.7/site-packages/django/db/utils.py", line '
+            '97, in __exit__\n'
+            '    six.reraise(dj_exc_type, dj_exc_value, traceback)\n'
+            '  File '
+            '"/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", '
+            'line 64, in execute\n'
+            '    return self.cursor.execute(sql, params)\n'
+            '  File '
+            '"/usr/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py", '
+            'line 124, in execute\n'
+            '    return self.cursor.execute(query, args)\n'
+            '  File '
+            '"/usr/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line '
+            '205, in execute\n'
+            '    self.errorhandler(self, exc, value)\n'
+            '  File '
+            '"/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", '
+            'line 36, in defaulterrorhandler\n'
+            '    raise errorclass, errorvalue\n'
+            'IntegrityError: (1062, "Duplicate entry '
+            '\'2\\xe7\\x8f\\xad-764-1\' for key \'name\'")\n',
+  'retcode': 1}</msg>
+<msg timestamp="20191211 22:42:43.573" level="INFO">${var} = {'reason': 'Traceback (most recent call last):\n  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 542, in addClass\n    school_class = self._addClass(name,schoo...</msg>
+<status status="PASS" starttime="20191211 22:42:43.484" endtime="20191211 22:42:43.573"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${var}[retcode]==1</arg>
+</arguments>
+<status status="PASS" starttime="20191211 22:42:43.575" endtime="20191211 22:42:43.576"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$var[reason]==duplicated class name</arg>
+</arguments>
+<msg timestamp="20191211 22:42:43.581" level="FAIL">Evaluating expression 'RF_VAR_var [reason ]==duplicated class name' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<status status="FAIL" starttime="20191211 22:42:43.578" endtime="20191211 22:42:43.582"></status>
+</kw>
+<status status="FAIL" starttime="20191211 22:42:43.374" endtime="20191211 22:42:43.584" critical="yes">Evaluating expression 'RF_VAR_var [reason ]==duplicated class name' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</test>
+<status status="FAIL" starttime="20191211 22:42:42.558" endtime="20191211 22:42:43.614"></status>
+</suite>
+<status status="FAIL" starttime="20191211 22:42:42.545" endtime="20191211 22:42:43.633"></status>
+</suite>
+<status status="FAIL" starttime="20191211 22:42:41.360" endtime="20191211 22:42:43.682"></status>
+</suite>
+<status status="FAIL" starttime="20191211 22:42:41.248" endtime="20191211 22:42:43.721"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1">Critical Tests</stat>
+<stat pass="2" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" id="s1" name="Tc">Tc</stat>
+<stat pass="2" fail="1" id="s1-s1" name="D-空白数据">Tc.D-空白数据</stat>
+<stat pass="2" fail="1" id="s1-s1-s1" name="班级管理">Tc.D-空白数据.班级管理</stat>
+<stat pass="2" fail="1" id="s1-s1-s1-s1" name="Newclass">Tc.D-空白数据.班级管理.Newclass</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

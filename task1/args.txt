@@ -1,0 +1,7 @@
+--pythonpath .
+--name 回归测试
+--test  用例10001
+--test  用例10002
+--test  用例10003
+--test  用例3000*
+webtest
